@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="binsoo"> 
+	<select id="getlist" resultType="com.example.demo.UserVo">
+		SELECT id
+		       , userName
+		       , password
+		       , email
+		  FROM BINSOO_USER
+	</select> 
+	
+	<select id="findByUserName" parameterType="String" resultType="com.example.demo.UserVo">
+		SELECT id
+		       , userName
+		       , password
+		       , email
+		  FROM BINSOO_USER
+		WHERE userName = #{userName} 
+	</select> 
+</mapper>
